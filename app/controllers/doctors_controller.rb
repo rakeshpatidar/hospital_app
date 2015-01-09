@@ -43,6 +43,6 @@ class DoctorsController < ApplicationController
     end
 
     def doctor_params
-      params.require(:doctor).permit(:first-name, :last-name, :gender, :email, :address, :language, :physician-type, :contact-no)
+      params.require(:doctor).permit(:first_name, :last_name, :gender, :email, :address, :language, :physician_type, :contact_no)
     end
 end
