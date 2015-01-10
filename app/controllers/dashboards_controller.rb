@@ -1,6 +1,5 @@
 class DashboardsController < ApplicationController
 	def index
-		@doctors = current_hospitaladmin.doctors.all
-		@patients = current_hospitaladmin.patients.all
+		@hospitals = Hospitaladmin.all
 	end
 end
