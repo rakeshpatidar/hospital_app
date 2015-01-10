@@ -29,15 +29,15 @@
                         </a>
                     </div>
                     <nav id="top-nav" class="navbar-no-collapse" role="navigation">
-                        <!-- navbar search form -->
                        
                         <!-- Navbar nav -->
                         <ul class="nav navbar-nav pull-right">
-                            
                            
+                         
+                         
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown">
-                                    <img class="avatar" src="/assets/avatars/1.jpg" width="36" height="36" alt="Jonh Doe"> <span class="avatar-name"><%= current_admin.email %></span>
+                                    <img class="avatar" src="/assets/avatars/1.jpg" width="36" height="36" alt="Jonh Doe"> <span class="avatar-name"><%= current_hospitaladmin.email %></span>
                                     <span class="caret ml5"></span>
                                 </a>
                                 <ul class="dropdown-menu right" role="menu">
@@ -48,11 +48,10 @@
                                     <li><a href="#"><i class="im-question3"></i> Help</a>
                                     </li>
                                     <li>
-                                    <%= link_to "Logout", destroy_admin_session_path, :method => :delete %>
+                                    <%= link_to "Logout", destroy_hospitaladmin_session_path, :method => :delete %>
                                     </li>
                                 </ul>
                             </li>
-                           
                         </ul>
                     </nav>
                 </div>
@@ -71,15 +70,23 @@
                 <!-- Start .option-buttons -->
                 <div class="option-buttons">
                     <div class="option-buttons-inner">
-                      <h5 class="sidebar-title">Navigation</h5>
+                 <h5 class="sidebar-title">Navigation</h5>
                     </div>
                 </div>
                 <!-- End .option-buttons -->
                 <!-- Start .sidebar-scrollarea -->
                 <div class="sidebar-scrollarea">
+                    
                     <ul id="sideNav" class="nav nav-pills nav-stacked">
-                        <li> <%= link_to 'Dashboard', :controller => "dashboards", :action => "index" %></li>
-                        <li><%= link_to "Add Hospital", new_hospitaladmin_registration_path, :method => :get %></li>
+                        <li>
+                        <%= link_to 'Dashboard', :controller => "hospitaladmin", :action => "index" %>
+                        </li>
+                        <li>
+                        <%= link_to 'Add Doctor', :controller => "doctors", :action => "new" %>
+                        </li>
+                        <li>
+                        <%= link_to 'Add Patient', :controller => "patients", :action => "new" %>
+                        </li>
                         <li>
                             <a href="#"><i class="im-list4"></i> <span class="txt">Forms</span></a>
                             <ul class="sub">
@@ -210,7 +217,6 @@
         </aside>
         <!-- End #sidebar -->
       
-        <!-- End .sidebar-inner -->
         </aside>
         <!-- Start #right-sidebar -->
         <!-- Start #content -->
@@ -226,58 +232,7 @@
                 </div>
                 <!-- Start .content-inner -->
                 <div class="content-inner">
+                    <!-- Start .row -->
                     <div class="row">
-                        <!-- Start .row -->
                         <div class="col-lg-12">
-                            <!-- col-lg-12 start here -->
-                            <div class="panel panel-default plain toggle panelClose panelRefresh" id="jst_3">
-                                <!-- Start .panel -->
-                                <div class="panel-heading white-bg">
-                                    <h4 class="panel-title">List of all Hospitals</h4>
-                                <div class="panel-controls"><a class="panel-refresh" href="#"><i class="im-spinner12"></i></a><a class="toggle panel-minimize" href="#"><i class="im-minus"></i></a><a class="panel-close" href="#"><i class="im-close"></i></a></div></div>
-                                <div class="panel-body">
-                                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: 100%; height: auto;"><div class="table-responsive" style="overflow: hidden; width: 100%; height: auto;"><table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th class="per5">
-                                                    #
-                                                </th>
-                                                <th class="per40">Email</th>
-                                                <th class="per40">Created at</th>
-                                                <th class="per15">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <% $i = 1 %>
-                                        <% @hospitals.each do |hospital| %>
-                                            <tr>
-                                                <td>
-                                                    <%= $i %>
-                                                </td>
-                                                <td><%= hospital.email %></td>
-                                                <td><%= hospital.created_at %></td>
-                                                <td>---</td>
-                                            </tr>
-                                            <% $i = $i+1 %>
-                                         <% end %>    
-                                           
-                                        </tbody>
-                                    </table>
-                                 
-                                     <%= link_to "Add Hospital", new_hospitaladmin_registration_path, :method => :get, :class => 'btn btn-success mr5 mb10' %>   
-                                    </div><div class="slimScrollBar ui-draggable" style="background: none repeat scroll 0% 0% rgb(255, 255, 255); height: 5px; position: absolute; bottom: 3px; opacity: 0.4; display: none; border-radius: 5px 5px 5px 5px; z-index: 99; width: 953px; left: 0px;"></div><div class="slimScrollRail" style="width: 100%; height: 5px; position: absolute; bottom: 3px; display: none; border-radius: 5px 5px 5px 5px; background: none repeat scroll 0% 0% rgb(51, 51, 51); opacity: 1; z-index: 90;"></div></div>
-                                </div>
-                            </div>
-                            <!-- End .panel -->
-                        </div>
-                        <!-- col-lg-12 end here -->
-                    </div>
-                 
-                </div>
-                <!-- End .content-inner -->
-            </div>
-            <!-- End .content-wrapper -->
-            <div class="clearfix"></div>
-        </div>
-
-
+                            <div class="row">
