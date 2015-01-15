@@ -60,9 +60,10 @@
                                                 <th class="per5">
                                                     No.
                                                 </th>
-                                                <th class="per40">First Name</th>
-                                                <th class="per40">First Name</th>
-                                                <th class="per15">Contact</th>
+                                                <th class="per40">Name</th>
+                                                <th class="per40">Contact</th>
+                                                <th class="per15">Billing ID</th>
+                                                <th class="per15">Attending Physician</th>
                                                 <th class="per15">Action</th>
                                             </tr>
                                         </thead>
@@ -73,9 +74,10 @@
                                                 <td>
                                                     <%= $j %>
                                                 </td>
-                                                <td><%= patient.first_name %></td>
-                                                <td><%= patient.first_name %></td>
+                                                <td><%= patient.name %></td>
                                                 <td><%= patient.contact_no %></td>
+                                                <td><%= patient.billing_id %></td>
+                                                <td><%= patient.physician %></td>
                                                 <td><%= link_to 'View', patient, :class => 'btn btn-default btn-xs mr5 mb10', :data => { :no_turbolink => true} %></td>
                                             </tr>
                                              <% $j = $j+1 %>

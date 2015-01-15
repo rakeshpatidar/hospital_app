@@ -5,7 +5,8 @@ class PatientsController < ApplicationController
   respond_to :html
 
   def index
-    @patients = Patient.all
+    @patients = current_hospitaladmin.patients.all
+    #@patients = Patient.all
     respond_with(@patients)
   end
 
@@ -14,7 +15,7 @@ class PatientsController < ApplicationController
   end
 
   def new
-    @patient = Patient.new
+    @patient = current_hospitaladmin.patients.new
     respond_with(@patient)
   end
 
@@ -22,7 +23,8 @@ class PatientsController < ApplicationController
   end
 
   def create
-    @patient = Patient.new(patient_params)
+    @patient = current_hospitaladmin.patients.new(patient_params)
+    @patient.hospitaladmin_id = current_hospitaladmin.id
     @patient.save
     respond_with(@patient)
   end
@@ -43,6 +45,6 @@ class PatientsController < ApplicationController
     end
 
     def patient_params
-      params.require(:patient).permit(:first_name, :last_name, :gender, :date_of_birth, :contact_no, :address)
+      params.require(:patient).permit(:name, :gender, :date_of_birth, :contact_no, :billing_id, :physician)
     end
 end

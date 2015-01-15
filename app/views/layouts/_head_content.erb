@@ -88,11 +88,22 @@
                              <i class="fa fa-user-md"></i><span class="txt">Add Doctor</span>
                         <% end %>
                         </li>
-                        <li>
-                        <%= link_to new_patient_path, data: { no_turbolink: true } do %>
-                            <i class="fa fa-wheelchair"></i><span class="txt">Add Patient</span>
-                        <% end %>    
+                        <li class="hasSub">
+                            <a href="#" class="notExpand"><i class="im-arrow-down2 sideNav-arrow rotate0"></i><i class="fa fa-wheelchair"></i> <span class="txt">Patient</span></a>
+                            <ul class="sub" style="display: none;">
+                                <li>
+                                    <%= link_to patients_path, data: { no_turbolink: true } do %>
+                                    <i class="im-arrow-right3"></i><span class="txt">All Patient</span>
+                                    <% end %>    
+                                </li>
+                                <li>
+                                    <%= link_to new_patient_path, data: { no_turbolink: true } do %>
+                                    <i class="im-arrow-right3"></i><span class="txt">Add Patient</span>
+                                    <% end %>    
+                                </li>
+                            </ul>
                         </li>
+                        
                        
                     </ul>
                     <div class="clearfix"></div>
