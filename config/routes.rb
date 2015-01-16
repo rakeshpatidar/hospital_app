@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   
 
+  #devise_for :doctors
+  devise_for :doctors
   resources :patients
-
-  resources :doctors
 
   get 'welcome/index'
 

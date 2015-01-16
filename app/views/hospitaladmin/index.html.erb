@@ -14,9 +14,9 @@
                                                 <th class="per5">
                                                     No.
                                                 </th>
-                                                <th class="per40">First Name</th>
-                                                <th class="per40">Last Name</th>
-                                                <th class="per15">Contact</th>
+                                                <th class="per40">Name</th>
+                                                <th class="per40">E-mail</th>
+                                                <th class="per15">Employee ID</th>
                                                 <th class="per15">Action</th>
                                             </tr>
                                         </thead>
@@ -27,10 +27,10 @@
                                                 <td>
                                                     <%= $i %>
                                                 </td>
-                                                <td><%= doctor.first_name %></td>
-                                                <td><%= doctor.last_name %></td>
-                                                <td><%= doctor.contact_no %></td>
-                                                <td><%= link_to 'View', doctor, :class => 'btn btn-default btn-xs mr5 mb10', :data => { :no_turbolink => true} %></td>
+                                                <td><%= doctor.name %></td>
+                                                <td><%= doctor.email %></td>
+                                                <td><%= doctor.emp_id %></td>
+                                                <td></td>
                                             </tr>
                                              <% $i = $i+1 %>
                                             <% end %>
@@ -38,8 +38,7 @@
 
                                     </table>
                                     <hr/>
-                                    <%= link_to 'View all', {controller: "doctors", action: "index"}, class: 'btn btn-success mr5 mb10', :data => { :no_turbolink => true} %>
-                                    <%= link_to "Add new", {controller: "doctors", action: "new"}, class: "btn btn-success mr5 mb10", :data => { :no_turbolink => true} %>
+                                   
                                     </div><div class="slimScrollBar ui-draggable" style="background: none repeat scroll 0% 0% rgb(255, 255, 255); height: 5px; position: absolute; bottom: 3px; opacity: 0.4; display: none; border-radius: 5px 5px 5px 5px; z-index: 99; width: 447px; left: 0px;"></div><div class="slimScrollRail" style="width: 100%; height: 5px; position: absolute; bottom: 3px; display: none; border-radius: 5px 5px 5px 5px; background: none repeat scroll 0% 0% rgb(51, 51, 51); opacity: 1; z-index: 90;"></div></div>
                                 </div>
                             </div>
